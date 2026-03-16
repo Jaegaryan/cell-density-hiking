@@ -2,7 +2,7 @@
 This repository holds the implementation of the Cell Density Hiking (CDH) clustering algorithm.
 
 # Citation
-For details on how CDH works pease refer to, or if you use this code please cite, our ARCS 2026 paper: "CDH: Accelerating Topological Mode-Seeking via Parallel Cell-Based Density Hiking", Proc. ARCS 2026.
+For details on how CDH works please refer to, or if you use this code please cite, our ARCS 2026 paper: "CDH: Accelerating Topological Mode-Seeking via Parallel Cell-Based Density Hiking", Proc. ARCS 2026.
 
 # Requirements
 This version uses:  
