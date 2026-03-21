@@ -95,6 +95,7 @@ def get_data(dataset, n_points, noise_fraction=0.01, **kwargs):
         x = np.repeat(x, 16, axis=0)
         # add noise
         x += np.random.rand(*x.shape).astype(np.float32) * 0.1
+        y = np.zeros(len(x), dtype=np.uint32)
     # 2D/3D
     elif dataset == 'blobs':
         x, y = make_blobs(n_samples=n_points, **kwargs);
