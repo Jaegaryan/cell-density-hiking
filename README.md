@@ -8,9 +8,9 @@ For details on how CDH works please refer to, or if you use this code please cit
 # How To
 ### Hyperparameters
 - max_points_per_node
-- min_prominence or (TODO n_clusters)
+- min_prominence
 
-## ARCS2026 Experiments
+### ARCS2026 Experiments
 [cdh_experiments.py](cdh_experiments.py) can be used to reproduce the results of the ARCS2026 paper.  
 It includes a visualization of the clustering algorithm and allows to select min_prominence interactively.
 You can calculate scores via the "Evaluate" button, and save the result via the "Save" button.
