@@ -937,9 +937,18 @@ def main():
 
     # v1.0-arcs2026 ----------------------------------------------------------------------------------------------------
     # x, y, n_points = get_data(dataset:='two_moons', n_points=int(2**16), noise=0.1)
-    x, y, n_points = get_data(dataset:='blobs', n_points=int(2**16), n_features=3, centers=(n_clusters:=16), cluster_std=np.random.rand(n_clusters) * 0.8, random_state=rng_seed)
+    # x, y, n_points = get_data(dataset:='blobs', n_points=int(2**16), n_features=3, centers=(n_clusters:=16), cluster_std=np.random.rand(n_clusters) * 0.8, random_state=rng_seed)
     # x, y, n_points = get_data(dataset:='clusterable_data', n_points=None)
-    Visualization(x, y, max_points_per_node=64, save_path=Path('data', 'v1.0-arcs2026', dataset))
+    # Visualization(x, y, max_points_per_node=64, save_path=Path('data', 'v1.0-arcs2026', dataset))
+
+    # stanford bunny
+    with np.load(Path('data', 'stanford_bunny.npz')) as data:
+        x, _ = data['vertexes'], data['indexes']
+    # normalize [-1, 1]
+    x = ((x - x.min(axis=0)) / (x.max(axis=0) - x.min(axis=0) + 1e-16) - 0.5) * 2
+    y = np.zeros(len(x), dtype=np.uint32)
+    Visualization(x, y, max_points_per_node=64, save_path=Path('data', 'stanford_bunny'))
+
 
 
 if __name__ == '__main__':
